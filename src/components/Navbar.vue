@@ -1,63 +1,60 @@
 <template>
   <nav class="navbar-wrapper">
-    <div class="navbar-container pill glass">
-      <ul class="nav-links left">
-        <li><a href="#about" class="nav-link">About Us</a></li>
-        <li><a href="#services" class="nav-link">Services</a></li>
-      </ul>
+    <div class="navbar-container pill">
+      <div class="nav-section left">
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#services" class="nav-link">Services</a>
+      </div>
       
       <div class="logo">
-        <div class="logo-icon"></div>
+        <div class="logo-icon-container">
+          <div class="logo-icon"></div>
+        </div>
         <span class="logo-text">Creatix</span>
       </div>
       
-      <ul class="nav-links right">
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#reviews" class="nav-link">Reviews</a></li>
-      </ul>
+      <div class="nav-section right">
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+      </div>
     </div>
   </nav>
 </template>
 
 <style scoped>
 .navbar-wrapper {
-  position: fixed;
+  position: absolute;
   top: 30px;
   left: 0;
   right: 0;
   z-index: 1000;
   display: flex;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .navbar-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px 40px;
-  width: auto;
-  min-width: 600px;
-  max-width: 900px;
-  gap: 60px;
+  justify-content: center;
+  padding: 18px 40px;
+  width: 100%;
+  max-width: 900px; /* Slimmer as per UI */
+  background: #000;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  gap: 60px;
 }
 
-.nav-links {
+.nav-section {
   display: flex;
-  gap: 30px;
-  width: 250px;
+  gap: 40px;
 }
-
-.nav-links.left { justify-content: flex-end; }
-.nav-links.right { justify-content: flex-start; }
 
 .nav-link {
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--text-main);
-  opacity: 0.8;
-  letter-spacing: 0.5px;
+  color: #fff;
+  opacity: 0.6;
 }
 
 .nav-link:hover {
@@ -69,42 +66,38 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  cursor: pointer;
+}
+
+.logo-icon-container {
+  width: 24px;
+  height: 24px;
+  background: var(--accent-green);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo-icon {
-  width: 24px;
-  height: 24px;
-  background-color: var(--accent-green);
+  width: 10px;
+  height: 10px;
+  background: #000;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  animation: rotateLogo 8s linear infinite;
-}
-
-@keyframes rotateLogo {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 .logo-text {
   font-size: 1.4rem;
   font-weight: 800;
+  color: #fff;
   letter-spacing: -1px;
 }
 
 @media (max-width: 768px) {
   .navbar-container {
-    min-width: 90vw;
-    padding: 10px 20px;
+    max-width: 90%;
     gap: 20px;
+    padding: 12px 20px;
   }
-  
-  .nav-link {
-    font-size: 0.8rem;
-  }
-  
-  .nav-links {
-    gap: 15px;
-    width: auto;
-  }
+  .nav-section { display: none; }
 }
 </style>

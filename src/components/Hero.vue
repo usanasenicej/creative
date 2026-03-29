@@ -1,41 +1,52 @@
 <template>
   <section class="hero-section">
-    <div class="hero-white-card">
-      <div class="hero-content">
-        <!-- Floating Elements -->
-        <div class="floating-badge badge-left pill fade-in">
-          <div class="icon-star"></div>
-          <span class="badge-text text-black">10 Years<br><small>Experience</small></span>
-        </div>
+    <!-- Hero White Background -->
+    <div class="hero-white-container">
+      <div class="container hero-inner">
         
-        <div class="floating-badge badge-right pill fade-in" style="animation-delay: 0.2s;">
-          <span class="badge-text text-black">Renovate Your Brand</span>
+        <!-- Top Title & Sparkles -->
+        <div class="hero-header">
+          <div class="sparkle left-sparkle"></div>
+          <h1 class="hero-title">Empowering Brands <br> Through <span>Creative Solutions</span></h1>
+          <div class="sparkle right-sparkle"></div>
         </div>
 
-        <div class="hero-text-content">
-          <div class="top-badge">
-            <div class="green-dot"></div>
-            <span>Creatix Agency</span>
+        <!-- Main Content Area with Woman and Badges -->
+        <div class="hero-content">
+          <!-- Floating Badges and Icons -->
+          <div class="badge-area left-badge">
+            <button class="renovate-btn pill">Renovate Your Brand</button>
+            <p class="description-text">From web development to branding, we deliver innovative strategies that elevate your brand and drive growth. Let's create something exceptional together.</p>
+            <div class="squiggle-arrow">
+              <svg viewBox="0 0 100 100" class="squiggle-svg">
+                <path d="M10,80 Q30,20 60,60 T90,40" stroke="#000" stroke-width="2" fill="none" />
+                <path d="M85,35 L90,40 L85,45" stroke="#000" stroke-width="2" fill="none" />
+              </svg>
+            </div>
           </div>
-          
-          <h1 class="hero-title">
-            Empowering Brands<br>Through <span class="text-gradient">Creative Solutions</span>
-          </h1>
-          
-          <p class="hero-subtitle">
-            From web development to branding, we deliver innovative strategies that elevate your brand and drive growth. Let's create something exceptional together.
-          </p>
-          
-          <div class="hero-actions">
-            <button class="btn btn-green pill">Start Your Project</button>
-            <button class="btn btn-outline pill">Let's Collaborate</button>
+
+          <div class="woman-image-wrapper">
+            <div class="gray-bg-circle"></div>
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=1000" alt="Creative Professional Cheering" class="hero-woman-img">
+            
+            <!-- Bottom CTA Pill -->
+            <div class="cta-floating-pill pill glass">
+              <button class="btn btn-green pill">Start Your Project</button>
+              <button class="btn btn-transparent">Let's Collaborate</button>
+            </div>
+          </div>
+
+          <div class="badge-area right-badge">
+            <div class="stars-row">
+              <div v-for="i in 5" :key="i" class="star">★</div>
+            </div>
+            <div class="experience-text">
+              <strong>10 Years</strong>
+              <span>Experience</span>
+            </div>
           </div>
         </div>
-        
-        <div class="hero-image-container">
-          <!-- Using high quality Unsplash image as requested -->
-          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=1200" alt="Creative Professional" class="hero-img">
-        </div>
+
       </div>
     </div>
   </section>
@@ -44,178 +55,161 @@
 <style scoped>
 .hero-section {
   background-color: var(--bg-dark);
-  padding: 120px 20px 0;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 100px 20px 0;
+  min-height: auto;
 }
 
-.hero-white-card {
-  background: var(--hero-light);
-  border-radius: 60px 60px 400px 400px; /* Dramatic rounded bottom */
+.hero-white-container {
+  background: #fff;
+  border-radius: 60px 60px 200px 200px;
   width: 100%;
   max-width: 1400px;
-  min-height: 80vh;
+  min-height: 700px;
+  margin: 0 auto;
   position: relative;
-  display: flex;
-  justify-content: center;
   overflow: hidden;
-  padding: 80px 40px;
+  padding: 60px 40px;
 }
 
-.hero-content {
-  max-width: 1200px;
-  width: 100%;
+.hero-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+}
+
+/* Header & Sparkles */
+.hero-header {
   position: relative;
-}
-
-.hero-text-content {
-  z-index: 10;
-  color: #000;
-  max-width: 800px;
-}
-
-.top-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(0, 0, 0, 0.05);
-  padding: 6px 16px;
-  border-radius: 99px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 24px;
-}
-
-.green-dot {
-  width: 8px;
-  height: 8px;
-  background: var(--accent-green);
-  border-radius: 50%;
-  box-shadow: 0 0 10px var(--accent-green);
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .hero-title {
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: 800;
+  color: #000;
   letter-spacing: -2px;
-  margin-bottom: 24px;
+  line-height: 1.1;
+  position: relative;
+  z-index: 10;
 }
 
-.text-gradient {
-  background: linear-gradient(to right, #000, #444);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.sparkle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: var(--accent-green);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0l3.09 6.26L22 7.27l-5 4.87L18.18 19 12 15.77 5.82 19 7 12.14 2 7.27l6.91-1.01L12 0z'/%3E%3C/svg%3E") no-repeat center;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0l3.09 6.26L22 7.27l-5 4.87L18.18 19 12 15.77 5.82 19 7 12.14 2 7.27l6.91-1.01L12 0z'/%3E%3C/svg%3E") no-repeat center;
 }
 
-.hero-subtitle {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #555;
-  max-width: 600px;
-  margin: 0 auto 40px;
-}
+.left-sparkle { top: -20px; left: -80px; transform: rotate(-15deg); }
+.right-sparkle { bottom: -10px; right: -80px; transform: rotate(15deg); }
 
-.hero-actions {
+/* Content Area */
+.hero-content {
   display: flex;
-  gap: 16px;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 20px;
+  position: relative;
 }
 
-.btn {
-  padding: 18px 36px;
-  font-weight: 700;
-  font-size: 1rem;
+.badge-area { display: flex; flex-direction: column; gap: 20px; width: 250px; }
+
+.renovate-btn {
+  background: transparent;
+  border: 1px solid #000;
+  padding: 10px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000;
+  width: fit-content;
+}
+
+.description-text {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.squiggle-arrow {
+  width: 80px;
+  height: 80px;
+  margin-left: 20px;
+  opacity: 0.8;
+}
+
+.woman-image-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -50px;
+}
+
+.gray-bg-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, #e0e0e0 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.hero-woman-img {
+  width: 100%;
+  max-width: 500px;
+  z-index: 5;
+  filter: contrast(1.05);
+}
+
+.cta-floating-pill {
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  bottom: 40px;
+  z-index: 20;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .btn-green {
   background: var(--accent-green);
   color: #000;
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
-.btn-green:hover {
-  background: #92e529;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(163, 255, 46, 0.3);
-}
-
-.btn-outline {
-  border: 2px solid #000;
-  color: #000;
+.btn-transparent {
   background: transparent;
-}
-
-.btn-outline:hover {
-  background: #000;
   color: #fff;
-  transform: translateY(-2px);
+  padding: 14px 28px;
+  font-weight: 600;
 }
 
-.hero-image-container {
-  margin-top: 40px;
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  justify-content: center;
-}
+/* Right Badge area */
+.right-badge { align-items: flex-end; text-align: right; }
 
-.hero-img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
-  /* Floating animation */
-  animation: float 6s ease-in-out infinite;
-}
+.stars-row { display: flex; gap: 4px; color: var(--accent-green); font-size: 1.2rem; }
 
-.floating-badge {
-  position: absolute;
-  padding: 16px 24px;
-  background: #fff;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  z-index: 20;
-}
+.experience-text { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.experience-text strong { font-size: 2.2rem; font-weight: 800; color: #000; }
+.experience-text span { font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 1px;}
 
-.badge-left {
-  top: 300px;
-  left: 100px;
-}
-
-.badge-right {
-  top: 400px;
-  right: 150px;
-}
-
-.badge-text { font-weight: 700; font-size: 0.9rem; text-align: left; line-height: 1.2; color: #000;}
-
-.icon-star {
-  color: #FFD700;
-  font-size: 1.5rem;
-  /* Visual of 5 stars */
-  width: 20px;
-  height: 20px;
-  background-color: var(--accent-green);
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E") no-repeat center;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E") no-repeat center;
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
-}
-
-@media (max-width: 1024px) {
-  .hero-title { font-size: 3rem; }
-  .badge-left, .badge-right { display: none; }
+@media (max-width: 1200px) {
+  .hero-title { font-size: 3.5rem; }
+  .left-sparkle, .right-sparkle { display: none; }
+  .badge-area { display: none; }
 }
 </style>
