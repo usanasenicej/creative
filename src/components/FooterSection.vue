@@ -59,9 +59,19 @@
       <div class="footer-bottom">
         <p>© 2026 Creatix Agency. All rights reserved.</p>
         <div class="bottom-links">
+          <div class="live-status">
+            <span class="status-dot"></span>
+            Accepting New Projects
+          </div>
           <span>Made with ❤️ for Creative Brands</span>
         </div>
       </div>
+    </div>
+    
+    <!-- Floating Back to Top -->
+    <a href="#" class="back-to-top pill">
+      <span>↑</span>
+    </a>
     </div>
     
     <!-- Large bottom green area for logo -->
@@ -261,6 +271,64 @@ const socials = ['𝕏', 'Ig', 'Li', 'Be']
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   color: var(--text-dim);
   font-size: 0.9rem;
+}
+
+.bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.live-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(163, 255, 46, 0.05);
+  padding: 6px 15px;
+  border-radius: 20px;
+  border: 1px solid rgba(163, 255, 46, 0.1);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent-green);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.4; transform: scale(1); }
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 999;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.back-to-top:hover {
+  background: var(--accent-green);
+  color: #000;
+  transform: translateY(-10px) scale(1.1);
 }
 
 .dramatic-bottom {
