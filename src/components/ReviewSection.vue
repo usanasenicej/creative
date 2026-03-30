@@ -9,11 +9,19 @@
         <div v-for="(review, index) in reviews" :key="index" class="review-card" :class="{ active: activeIndex === index }">
           <div class="review-content">
             <div class="quote-icon">"</div>
-            <p class="review-text">{{ review.text }}</p>
+            <div class="review-text-container">
+              <div class="trust-stars">★★★★★</div>
+              <p class="review-text">{{ review.text }}</p>
+            </div>
             <div class="review-footer">
               <img :src="review.image" :alt="review.name" class="reviewer-img">
               <div class="reviewer-info">
-                <h4 class="reviewer-name">{{ review.name }}</h4>
+                <div class="name-row">
+                  <h4 class="reviewer-name">{{ review.name }}</h4>
+                  <div class="verified-badge pill">
+                    <span class="check">✓</span> Verified
+                  </div>
+                </div>
                 <p class="reviewer-role">{{ review.role }}</p>
               </div>
             </div>
@@ -121,6 +129,13 @@ const prev = () => {
   line-height: 1;
 }
 
+.trust-stars {
+  color: var(--accent-green);
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
 .review-text {
   font-size: 1.8rem;
   font-weight: 500;
@@ -143,6 +158,28 @@ const prev = () => {
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--accent-green);
+}
+
+.name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.verified-badge {
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  color: var(--text-dim);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.verified-badge .check {
+  color: var(--accent-green);
+  font-weight: 900;
 }
 
 .reviewer-name {
