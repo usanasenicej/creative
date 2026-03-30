@@ -94,6 +94,24 @@
   z-index: 10;
 }
 
+.hero-title span {
+  background: linear-gradient(90deg, #000, #444, #000);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite, float 6s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes shine {
+  to { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
 .sparkle {
   position: absolute;
   width: 50px;
