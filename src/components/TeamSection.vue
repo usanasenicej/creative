@@ -19,7 +19,13 @@
             </div>
             <div class="member-info">
               <h3 class="member-name">{{ member.name }}</h3>
-              <p class="member-role">{{ member.role }}</p>
+              <div class="role-row">
+                <p class="member-role">{{ member.role }}</p>
+                <div class="member-socials">
+                  <span class="social-icon">in</span>
+                  <span class="social-icon">𝕏</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="member-bottom">
@@ -182,6 +188,13 @@ const team = [
   font-size: 1.4rem;
   font-weight: 800;
   color: #fff;
+  margin-bottom: 4px;
+}
+
+.role-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .member-role {
@@ -189,6 +202,39 @@ const team = [
   color: var(--text-dim);
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.member-socials {
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.4s ease;
+}
+
+.team-card:hover .member-socials {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: var(--accent-green);
+  color: #000;
+  transform: scale(1.2);
 }
 
 .member-bio {
