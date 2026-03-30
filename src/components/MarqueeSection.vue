@@ -21,7 +21,7 @@ const items = ['Innovate', 'Inspire', 'Create']
 <style scoped>
 .marquee-section {
   background-color: var(--bg-dark);
-  padding: 60px 0;
+  padding: 80px 0;
   overflow: hidden;
   position: relative;
 }
@@ -31,6 +31,11 @@ const items = ['Innovate', 'Inspire', 'Create']
   overflow: hidden;
   gap: 60px;
   user-select: none;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(5px);
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .marquee-track {
@@ -38,18 +43,25 @@ const items = ['Innovate', 'Inspire', 'Create']
   flex-shrink: 0;
   gap: 60px;
   min-width: 100%;
-  animation: scroll 20s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 
 .marquee-item {
   display: flex;
   align-items: center;
   gap: 60px;
-  font-size: 5rem;
-  font-weight: 800;
+  font-size: 6rem;
+  font-weight: 900;
   text-transform: uppercase;
   color: #fff;
-  letter-spacing: -2px;
+  letter-spacing: -3px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.marquee-item:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 .marquee-plus {
