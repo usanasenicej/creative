@@ -97,14 +97,34 @@ const services = [
   padding: 24px 40px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: var(--transition);
+  border-left: 0 solid var(--accent-green);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 .service-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateX(10px);
-  border-color: var(--accent-green);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(15px);
+  border-color: rgba(182, 255, 0, 0.3);
+  border-left: 8px solid var(--accent-green);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.service-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+  transition: left 0.6s ease;
+}
+
+.service-item:hover::before {
+  left: 100%;
 }
 
 .service-index {
