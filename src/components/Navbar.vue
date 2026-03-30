@@ -40,9 +40,18 @@
   padding: 18px 40px;
   width: 100%;
   max-width: 900px; /* Slimmer as per UI */
-  background: #000;
+  background: rgba(0, 0, 0, 0.85); /* Slightly transparent */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   gap: 60px;
+  transition: all 0.3s ease;
+}
+
+.navbar-container:hover {
+  border-color: rgba(182, 255, 0, 0.2);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
 }
 
 .nav-section {
@@ -55,11 +64,29 @@
   font-weight: 500;
   color: #fff;
   opacity: 0.6;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-green);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .nav-link:hover {
   opacity: 1;
-  color: var(--accent-green);
+  color: #fff;
 }
 
 .logo {
