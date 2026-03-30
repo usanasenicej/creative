@@ -36,7 +36,14 @@ const stats = [
   display: flex;
   justify-content: space-around;
   padding: 40px 60px;
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 0 0 20px rgba(182, 255, 0, 0.05);
+  border-radius: 40px;
+  transition: all 0.4s ease;
+}
+
+.stats-pill:hover {
+  border-color: rgba(182, 255, 0, 0.2);
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8), 0 0 30px rgba(182, 255, 0, 0.1);
 }
 
 .stat-item {
@@ -46,6 +53,11 @@ const stats = [
   gap: 8px;
   position: relative;
   flex: 1;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
 }
 
 .stat-divider {
@@ -61,6 +73,11 @@ const stats = [
   font-size: 2.2rem;
   font-weight: 800;
   color: #fff;
+  transition: color 0.3s ease;
+}
+
+.stat-item:hover .stat-number {
+  color: var(--accent-green);
 }
 
 .stat-label {
